@@ -91,7 +91,9 @@ public class Version implements Serializable {
     public static final Version V_0_19_12 = new Version(V_0_19_12_ID, false);
     public static final int V_0_19_13_ID = /*00*/191399;
     public static final Version V_0_19_13 = new Version(V_0_19_13_ID, true);
-
+    
+    //0.90.x has the corresponsing lucence version.
+    
     public static final Version CURRENT = V_0_19_13;
 
     public static Version readVersion(StreamInput in) throws IOException {
@@ -169,6 +171,10 @@ public class Version implements Serializable {
     public final byte build;
     public final Boolean snapshot;
 
+/**
+ * goood version. 
+ * 
+ */
     Version(int id, @Nullable Boolean snapshot) {
         this.id = id;
         this.major = (byte) ((id / 1000000) % 100);
